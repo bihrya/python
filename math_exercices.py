@@ -17,7 +17,7 @@ def simpleSubstraction(limit1=20, limit2=20):
     question = ("{} - {} = ".format(max(one,two), min(one,two)))
     print(question)
     return result
-
+python
 def simpleMultiplication(limit1=12, limit2=12):
     one = random.randint(1,limit1)
     two = random.randint(1,limit2)
@@ -26,6 +26,10 @@ def simpleMultiplication(limit1=12, limit2=12):
     print(question)
     return result
 
-print(simpleAddition(10,10))
-print(simpleSubstraction(20,20))
-print(simpleMultiplication())
+def simpleDivision(limit1=12, limit2=12):
+    one = random.randint(1,limit1)
+    two = random.randint(1,limit2)
+    result = one * two
+    question = ("{} / {} =".format(result, one))
+    print(question)
+    return two
