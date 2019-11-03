@@ -25,7 +25,3 @@ def simpleMultiplication(limit1=12, limit2=12):
     question = ("{} x {} = ".format(one, two))
     print(question)
     return result
-
-print(simpleAddition(10,10))
-print(simpleSubstraction(20,20))
-print(simpleMultiplication())
