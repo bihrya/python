@@ -32,3 +32,21 @@ def simpleDivision(limit1=12, limit2=12):
     question = ("{} / {} = ".format(result, one))
     print(question)
     return two
+
+def thousandsAddition(limit1, limit2):
+    result = 0
+    while result == 0 or result > 1000000:
+        one = random.randint(1,limit1) * 1000
+        two = random.randint(1,limit2) * 1000
+        result = one + two
+
+    print("{} + {} = ".format(one, two))
+    return result
+
+def thousandsSubstraction(limit1, limit2):
+    one = random.randint(1,limit1) * 1000
+    two = random.randint(1,limit2) * 1000
+    result = max(one,two) - min(one,two)
+
+    print("{} - {} = ".format(max(one,two), min(one,two)))
+    return result
