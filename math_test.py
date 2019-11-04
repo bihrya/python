@@ -7,14 +7,15 @@ print("Start test")
 
 wrong_answer = 0
 correct_answer = 0
+error = ()
 
 # Test parameters **********************************************
-simpleAdditions=2                                              #
-simpleSubstractions=2                                          #
-simpleMultiplications=2                                        #
-simpleDivisions=2                                              #
-thousandsAdditions=2                                           #
-thousandsSubstractions=2                                       #
+simpleAdditions=5                                              #
+simpleSubstractions=0
+simpleMultiplications=0
+simpleDivisions=0
+thousandsAdditions=0
+thousandsSubstractions=0
 # **************************************************************
 
 def ask(question):
@@ -37,8 +38,9 @@ start_time = time.time()
 for i in range(simpleAdditions):
     s= time.time()
     res = m.simpleAddition(10,10)
-    if not ask("The result is ") == res:
-        print("Not correct: {}".format(res))
+    if not ask("The result is ") == res[1]:
+        error = error + (res,)
+        print("Not correct: {}".format(res[1]))
         wrong_answer=wrong_answer+1
     else:
         #print("good in {} seconds".format(round(time.time()-s,2)))
@@ -67,8 +69,8 @@ os.system('clear')
 for i in range(simpleMultiplications):
     s= time.time()
     res = m.simpleMultiplication(12,12)
-    if not ask("The result is ") == res:
-        print("Not correct: {}".format(res))
+    if not ask("The result is ") == res[1]:
+        print("Not correct: {}".format(res[1]))
         wrong_answer=wrong_answer+1
     else:
         #print("good in {} seconds".format(round(time.time()-s,2)))
@@ -82,8 +84,8 @@ os.system('clear')
 for i in range(simpleDivisions):
     s= time.time()
     res = m.simpleDivision(12,12)
-    if not ask("The result is ") == res:
-        print("Not correct: {}".format(res))
+    if not ask("The result is ") == res[1]:
+        print("Not correct: {}".format(res[1]))
         wrong_answer=wrong_answer+1
     else:
         #print("good in {} seconds".format(round(time.time()-s,2)))
@@ -108,7 +110,7 @@ duration = time.time() - start_time
 # Substraction thousands
 for i in range(thousandsSubstractions):
     s= time.time()
-    res = m.thousandsSubstraction(1000,1000)
+    res = m.thousandsSubstraction(1000,100)
     if not ask("The result is ") == res:
         print("Not correct: {}".format(res))
         wrong_answer=wrong_answer+1
@@ -124,3 +126,6 @@ print("{} wrong answers".format(wrong_answer))
 print("Finished in {} seconds".format(round(duration)))
 print("*******************************************")
 print("")
+
+for i in range(len(error)):
+    print("{}: {}".format(i,error[i]))

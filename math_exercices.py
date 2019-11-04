@@ -7,8 +7,8 @@ def simpleAddition(limit1=20, limit2=20):
     result = one + two
     question = ("{} + {} = ".format(one, two))
     print(question)
-    return result
-
+    return (question, result)
+    
 def simpleSubstraction(limit1=20, limit2=20):
     one = random.randint(1,limit1)
     two = random.randint(1,limit2)
