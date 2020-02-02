@@ -1,14 +1,17 @@
 
 import random
+import logging
+
 
 def simpleAddition(limit1=20, limit2=20):
+
     one = random.randint(1,limit1)
     two = random.randint(1,limit2)
     result = one + two
     question = ("{} + {} = ".format(one, two))
-    print(question)
+    #print(question)
     return (question, result)
-    
+
 def simpleSubstraction(limit1=20, limit2=20):
     one = random.randint(1,limit1)
     two = random.randint(1,limit2)
@@ -50,3 +53,11 @@ def thousandsSubstraction(limit1, limit2):
 
     print("{} - {} = ".format(max(one,two), min(one,two)))
     return result
+
+def simpleAdditionsExercice(questionsNumber=20):
+    #logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+    #logging.debug('This is a low-level debug message.')
+    questions = []
+    for i in range(questionsNumber):
+        questions.append(simpleAddition())
+    return questions
